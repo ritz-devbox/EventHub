@@ -31,8 +31,14 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
 
+    - name: Check code format
+      run: dotnet format --verify-no-changes
+
     - name: Build solution
       run: dotnet build --configuration Release --no-restore
 
-    - name: Skip tests (for now)
-      run: echo "No test project yet — skipping tests"
+    - name: Run tests with coverage
+      run: dotnet test --configuration Release --no-build --collect "XPlat Code Coverage"
+
+    - name: Scan for vulnerable packages
+      run: dotnet list package --vulnerable
