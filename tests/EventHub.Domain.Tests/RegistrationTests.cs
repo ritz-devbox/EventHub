@@ -1,4 +1,5 @@
 using EventHub.Domain.Entities;
+using Xunit;
 
 namespace EventHub.Domain.Tests;
 

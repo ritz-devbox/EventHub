@@ -1,5 +1,6 @@
 using EventHub.Domain.Exceptions;
 using EventHub.Domain.ValueObjects;
+using Xunit;
 
 namespace EventHub.Domain.Tests;
 
