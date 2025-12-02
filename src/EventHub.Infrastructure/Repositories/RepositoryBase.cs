@@ -1,6 +1,5 @@
-﻿using EventHub.Application.Interfaces;
+using EventHub.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace EventHub.Infrastructure.Repositories;
 
@@ -24,7 +23,7 @@ public class RepositoryBase<T> : IRepository<T> where T : class
     public async Task AddAsync(T entity)
     {
         await _set.AddAsync(entity);
-        await _context.SaveChangesAsync();   
+        await _context.SaveChangesAsync();
     }
 
     public async Task RemoveAsync(T entity)
